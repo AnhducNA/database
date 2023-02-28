@@ -1,0 +1,28 @@
+    Đề bài:
+    Một bệnh viện có nhiều khu chữa trị. Một khu chữa trị có số của khu (định danh) và tên.
+    Bệnh nhân gồm hai loại: bệnh nhân nội trú và bệnh nhân ngoại trú.
+    Bệnh nhân có mã bệnh nhân, tên và ngày sinh. Các bác sĩ có mã bác sĩ và tên.
+    Bác sĩ có thể tiếp nhận hoặc điều trị bệnh nhân.
+    Mỗi giường bệnh có số giường, số phòng và số khu chữa trị.
+    Thuốc men hoặc dụng cụ dùng để chữa bệnh được gọi chung là vật tư, có mã, đặc tả và đơn giá.
+    Các nhân viên trong bệnh viện có mã số và tên.
+
+    Một sự chữa trị là bất kỳ một cuộc xét nghiệm hoặc một công việc điều trị nào đó
+    mà một bác sĩ thực hiện cho một bệnh nhân.
+    Một sự chữa trị có định danh là một mã số bao gồm số và tên của sự chữa trị đó.
+
+    Mỗi nhân viên của bệnh viện làm việc trong một hoặc nhiều khu chữa trị. Mỗi
+    khu có ít nhất một nhân viên. Bệnh viện cần thống kê số giờ làm việc trong một
+    tuần của mỗi nhân viên tại một khu chữa trị.
+    Mỗi khu chữa trị có một y tá trưởng.
+    Bệnh nhân ngoại trú không có giường nằm. Giường có thể không có bệnh
+    nhân. Một bệnh nhân đang được chữa trị có một bác sĩ theo dõi. Một bác sĩ có thể
+    theo dõi nhiều bệnh nhân hoặc không theo dõi bệnh nhân nào.
+    Một bác sĩ có thể thực hiện nhiều lần chữa trị cho nhiều bệnh nhân. Một bệnh
+    nhân được chữa trị nhiều lần bởi nhiều bác sĩ. Bệnh viện cần biết mỗi lần chữa trị,
+    bệnh nhân được chữa trị bởi bác sĩ nào, ngày chữa trị, thời gian chữa trị và kết
+    quả.
+    Một bệnh nhân cần nhiều thuốc men và dụng cụ. Mỗi loại thuốc men hay dụng
+    cụ có thể được sử dụng cho nhiều bệnh nhân hoặc chưa được sử dụng. Bệnh viện
+    cần thống kê ngày, thời gian, số lượng và tổng số tiền (số lượng x đơn giá) cho
+    một loại thuốc men hay dụng cụ mỗi lần sử dụng cho bệnh nhân.

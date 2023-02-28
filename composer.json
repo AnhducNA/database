@@ -13,6 +13,7 @@
     "require": {
         "php": ">=8.0",
         "ext-pdo": "*",
-        "larapack/dd": "^1.1"
+        "larapack/dd": "^1.1",
+        "fakerphp/faker": "^1.21"
     }
 }
