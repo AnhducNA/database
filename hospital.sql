@@ -113,4 +113,7 @@ ORDER BY vtbn.ngay ASC;
 SELECT bn.ten, bs.ten as bac_si_theo_doi
 FROM benhNhan bn
          LEFT JOIN bacSi bs ON bn.loaiBenhNhan_id = bs.id
-WHERE bs.loaiBacSi = 'bac_si_theo_doi';
+WHERE bs.loaiBacSi = 'bac_si_theo_doi'
+ORDER BY bn.id;
+
+
