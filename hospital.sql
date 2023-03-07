@@ -89,19 +89,22 @@ CREATE TABLE vatTu_benhNhan
 )
 
 -- Thống kê số giờ làm việc trong một tuần gần nhất của mỗi nhân viên tại một khu chữa trị.
-SELECT knv.khu_id, khu.ten, knv.nhanVien_id, nv.ten, SUM(thoiGian) as soGioTrongTuan
+SELECT knv.khu_id, khu.ten, knv.nhanVien_id, user.ten, SUM(thoiGian) as soGioTrongTuan
 FROM khu_nhanVien as knv
          LEFT JOIN khu ON knv.khu_id = khu.id
-         LEFT JOIN nhanVien nv on knv.nhanVien_id = nv.id
-WHERE knv.ngay >= NOW()
-  AND knv.ngay <= NOW() + INTERVAL 7 DAY
+         LEFT JOIN `user` on knv.nhanVien_id = user.id
+WHERE user.phanLoai = 'nhan_vien'
+  AND knv.ngay <= NOW()
+  AND knv.ngay >= NOW() - INTERVAL 7 DAY
 group by knv.khu_id, knv.nhanVien_id;
+
 
 -- Thống kê mỗi lần chữa trị , bệnh nhân được chữa trị bởi bác sĩ nào, ngày chữa trị, thời gian chữa trị, kết quả.
 SELECT sct.id, bn.ten, bs.ten, sct.ngayChuaTri, sct.thoiGianChuaTri, sct.ketQua
 from suChuaTri sct
          LEFT JOIN benhNhan bn on sct.benhNhan_id = bn.id
-         LEFT JOIN bacSi bs on sct.bacSi_id = bs.id
+         LEFT JOIN `user` bs on sct.bacSi_id = bs.id
+WHERE bs.phanLoai = 'y_ta_truong'
 ORDER BY bn.ten;
 
 -- Thống kê ngày, thời gian, số lượng, tổng số tiền (số lượng x đơn giá) mỗi loại vạt tư sử dụng cho bệnh nhân.
@@ -119,6 +122,7 @@ WHERE bs.loaiBacSi = 'bac_si_theo_doi'
 ORDER BY bn.id;
 
 -- Thống kê giường nào đang có bệnh nhân nào nằm hay chưa
-SELECT gb.id, nV.id FROM giuongBenh as gb
-        INNER JOIN nhanVien nV on nV.id = gb.nhanVien_id
+SELECT gb.id, gb.soPhong , gb.khuChuaTri_id , bn.ten
+FROM giuongBenh as gb
+         INNER JOIN benhNhan bn ON bn.id  = gb.benhNhan_id
 ORDER BY gb.id;

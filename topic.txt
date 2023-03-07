@@ -16,7 +16,8 @@
     tuần của mỗi nhân viên tại một khu chữa trị.
     Mỗi khu chữa trị có một y tá trưởng.
     Bệnh nhân ngoại trú không có giường nằm. Giường có thể không có bệnh
-    nhân. Một bệnh nhân đang được chữa trị có một bác sĩ theo dõi. Một bác sĩ có thể
+    nhân.
+    Một bệnh nhân đang được chữa trị có một bác sĩ theo dõi. Một bác sĩ có thể
     theo dõi nhiều bệnh nhân hoặc không theo dõi bệnh nhân nào.
     Một bác sĩ có thể thực hiện nhiều lần chữa trị cho nhiều bệnh nhân. Một bệnh
     nhân được chữa trị nhiều lần bởi nhiều bác sĩ. Bệnh viện cần biết mỗi lần chữa trị,

@@ -1,8 +1,6 @@
 <?php
 
-use Anhduc\Database\Connection\MySqlConnection;
 use Anhduc\Database\Faker\Generate;
-use Anhduc\Database\QueryBuilder\MySqlBuilder;
 
 require 'vendor/autoload.php';
 
@@ -16,7 +14,12 @@ try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-//    dd($faker->getName());
+        for ($i = 5; $i <= 10; $i++) {
+        $name = $faker->getName();
+        $sql = "insert into user values ('$i', '$name', 'nhan_vien')";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+    }
 //    for ($i = 1; $i <= 10; $i++) {
 //        $name = $faker->getName();
 //        $maLoaiBenhNhan = rand(1, 2);
