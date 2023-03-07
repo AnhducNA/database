@@ -31,6 +31,8 @@ CREATE TABLE giuongBenh
     id           int NOT NULL AUTO_INCREMENT,
     soPhong      int,
     soKhuChuaTri int,
+    nhanVien_id  int,
+    FOREIGN KEY (nhanVien_id) REFERENCES nhanVien (id),
     PRIMARY KEY (id)
 )
 CREATE TABLE vatTu
@@ -115,3 +117,8 @@ FROM benhNhan bn
          LEFT JOIN bacSi bs ON bn.loaiBenhNhan_id = bs.id
 WHERE bs.loaiBacSi = 'bac_si_theo_doi'
 ORDER BY bn.id;
+
+-- Thống kê giường nào đang có bệnh nhân nào nằm hay chưa
+SELECT gb.id, nV.id FROM giuongBenh as gb
+        INNER JOIN nhanVien nV on nV.id = gb.nhanVien_id
+ORDER BY gb.id;
