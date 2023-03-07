@@ -51,7 +51,7 @@ CREATE TABLE suChuaTri
     id  int          NOT NULL AUTO_INCREMENT,
     ten varchar(255) NOT NULL,
     PRIMARY KEY (id)
-) use hospital;
+)
 CREATE TABLE khu_nhanVien
 (
     id          int NOT NULL AUTO_INCREMENT,
@@ -115,5 +115,3 @@ FROM benhNhan bn
          LEFT JOIN bacSi bs ON bn.loaiBenhNhan_id = bs.id
 WHERE bs.loaiBacSi = 'bac_si_theo_doi'
 ORDER BY bn.id;
-
-
